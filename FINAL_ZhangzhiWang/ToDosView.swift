@@ -91,23 +91,7 @@ struct ToDosView: View {
                 }
             }
             
-            VStack {
-                Spacer()
-                
-                HStack {
-                    Spacer()
-                    
-                    Button(action: {
-                        
-                    }) {
-                        Image("plusButton")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 65, height: 65)
-                    }
-                    .padding(.trailing, 20)
-                    .padding(.bottom, 20)
-                }
+            FloatingActionButton {
             }
         }
     }

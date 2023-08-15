@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D0FB7BE2A8B19C40097A0D7 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0FB7BD2A8B19C40097A0D7 /* IconButton.swift */; };
+		8D0FB7C02A8B1D090097A0D7 /* MoneyTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0FB7BF2A8B1D090097A0D7 /* MoneyTrackerView.swift */; };
+		8D0FB7C22A8B22960097A0D7 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0FB7C12A8B22960097A0D7 /* Transaction.swift */; };
+		8D6407E12A8C09E00061F13B /* FloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6407E02A8C09E00061F13B /* FloatingActionButton.swift */; };
+		8D6407E32A8C0AEB0061F13B /* NewAmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6407E22A8C0AEB0061F13B /* NewAmountView.swift */; };
+		8D6407E52A8C19CE0061F13B /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6407E42A8C19CE0061F13B /* MainTabView.swift */; };
+		8D6407E72A8C19FE0061F13B /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6407E62A8C19FE0061F13B /* CalendarView.swift */; };
+		8D6407E92A8C1A380061F13B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6407E82A8C1A380061F13B /* SettingsView.swift */; };
 		8D95E8D12A8866EB00FAFFF1 /* ToDosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D95E8D02A8866EB00FAFFF1 /* ToDosView.swift */; };
 		8D95E8D32A8883BD00FAFFF1 /* NewReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D95E8D22A8883BD00FAFFF1 /* NewReminderView.swift */; };
 		8D95E8D62A88863E00FAFFF1 /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D95E8D52A88863E00FAFFF1 /* LabelView.swift */; };
@@ -20,6 +28,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D0FB7BD2A8B19C40097A0D7 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
+		8D0FB7BF2A8B1D090097A0D7 /* MoneyTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyTrackerView.swift; sourceTree = "<group>"; };
+		8D0FB7C12A8B22960097A0D7 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		8D6407E02A8C09E00061F13B /* FloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButton.swift; sourceTree = "<group>"; };
+		8D6407E22A8C0AEB0061F13B /* NewAmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAmountView.swift; sourceTree = "<group>"; };
+		8D6407E42A8C19CE0061F13B /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		8D6407E62A8C19FE0061F13B /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		8D6407E82A8C1A380061F13B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		8D95E8D02A8866EB00FAFFF1 /* ToDosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDosView.swift; sourceTree = "<group>"; };
 		8D95E8D22A8883BD00FAFFF1 /* NewReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReminderView.swift; sourceTree = "<group>"; };
 		8D95E8D52A88863E00FAFFF1 /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
@@ -51,6 +67,8 @@
 				8D95E8D72A88874B00FAFFF1 /* CustomTextField.swift */,
 				8D95E8D92A88889000FAFFF1 /* PageTitleView.swift */,
 				8D95E8DB2A888B0D00FAFFF1 /* ImageButton.swift */,
+				8D0FB7BD2A8B19C40097A0D7 /* IconButton.swift */,
+				8D6407E02A8C09E00061F13B /* FloatingActionButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -77,8 +95,14 @@
 				8D95E8D42A88862600FAFFF1 /* Components */,
 				8DF96D4C2A884689008188FF /* FINAL_ZhangzhiWangApp.swift */,
 				8DF96D5A2A8846D5008188FF /* LoginView.swift */,
+				8D6407E42A8C19CE0061F13B /* MainTabView.swift */,
 				8D95E8D02A8866EB00FAFFF1 /* ToDosView.swift */,
 				8D95E8D22A8883BD00FAFFF1 /* NewReminderView.swift */,
+				8D0FB7BF2A8B1D090097A0D7 /* MoneyTrackerView.swift */,
+				8D6407E22A8C0AEB0061F13B /* NewAmountView.swift */,
+				8D6407E62A8C19FE0061F13B /* CalendarView.swift */,
+				8D6407E82A8C1A380061F13B /* SettingsView.swift */,
+				8D0FB7C12A8B22960097A0D7 /* Transaction.swift */,
 				8DF96D502A88468B008188FF /* Assets.xcassets */,
 				8DF96D522A88468B008188FF /* Preview Content */,
 			);
@@ -163,13 +187,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D0FB7C22A8B22960097A0D7 /* Transaction.swift in Sources */,
+				8D0FB7BE2A8B19C40097A0D7 /* IconButton.swift in Sources */,
 				8D95E8D12A8866EB00FAFFF1 /* ToDosView.swift in Sources */,
 				8D95E8DA2A88889000FAFFF1 /* PageTitleView.swift in Sources */,
 				8DF96D5B2A8846D5008188FF /* LoginView.swift in Sources */,
+				8D6407E72A8C19FE0061F13B /* CalendarView.swift in Sources */,
 				8D95E8DC2A888B0D00FAFFF1 /* ImageButton.swift in Sources */,
 				8D95E8D82A88874B00FAFFF1 /* CustomTextField.swift in Sources */,
+				8D6407E32A8C0AEB0061F13B /* NewAmountView.swift in Sources */,
+				8D6407E92A8C1A380061F13B /* SettingsView.swift in Sources */,
+				8D6407E12A8C09E00061F13B /* FloatingActionButton.swift in Sources */,
 				8DF96D4D2A884689008188FF /* FINAL_ZhangzhiWangApp.swift in Sources */,
 				8D95E8D32A8883BD00FAFFF1 /* NewReminderView.swift in Sources */,
+				8D6407E52A8C19CE0061F13B /* MainTabView.swift in Sources */,
+				8D0FB7C02A8B1D090097A0D7 /* MoneyTrackerView.swift in Sources */,
 				8D95E8D62A88863E00FAFFF1 /* LabelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

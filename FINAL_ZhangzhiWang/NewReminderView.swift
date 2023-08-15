@@ -10,6 +10,7 @@ import SwiftUI
 struct NewReminderView: View {
     
     @State private var newReminder: String = ""
+    @State private var note: String = ""
     
     var body: some View {
         ZStack {
@@ -20,32 +21,65 @@ struct NewReminderView: View {
                 
                 PageTitleView(title: "New Reminder")
                 
-                LabelView(labelText: "Reminder Name")
-                
-                CustomTextField(text: $newReminder, placeholder: "New reminder")
-                
-                LabelView(labelText: "Category")
-                
-                ImageButton(imageName: "categorySelector") {
-                }
-                
-                LabelView(labelText: "Details")
-                
-                HStack {
-                    ImageButton(imageName: "googleButton") {
-                    }
+                VStack(spacing: 25) {
+                    LabelView(labelText: "Reminder Name")
                     
-                    ImageButton(imageName: "facebookButton") {
+                    CustomTextField(text: $newReminder, placeholder: "New reminder")
+                }
+                
+                VStack {
+                    LabelView(labelText: "Category")
+                    
+                    ImageButton(imageName: "categorySelector") {
                     }
                 }
                 
-                LabelView(labelText: "Note")
+                VStack {
+                    LabelView(labelText: "Details")
+                    
+                    HStack {
+                        ImageButton(imageName: "googleButton") {
+                        }
+                        
+                        ImageButton(imageName: "facebookButton") {
+                        }
+                    }
+                }
+                
+                
+                VStack {
+                    LabelView(labelText: "Note")
+                    
+                    TextEditor(text: $note)
+                        .font(.body)
+                        .frame(height: 120)
+                        .shadow(color: .gray.opacity(0.3), radius: 1.5, x: 1, y: 1)
+                }
+                
+                
                 
                 LabelView(labelText: "Add Smiley")
                 
-                ImageButton(imageName: "createReminderButton") {
+                HStack(spacing: 10) {
+                    IconButton(imageName: "loveIcon") {
+                    }
+                    
+                    IconButton(imageName: "smileIcon") {
+                    }
+                    
+                    IconButton(imageName: "nothappyIcon") {
+                    }
+                    
+                    IconButton(imageName: "sadIcon") {
+                    }
+                    
+                    IconButton(imageName: "plusIcon") {
+                    }
+                    Spacer()
                 }
                 
+                ImageButton(imageName: "createReminderButton") {
+                }
             }
             .padding(28)
         }

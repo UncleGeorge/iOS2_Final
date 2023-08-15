@@ -11,67 +11,78 @@ struct LoginView: View {
     
     @State private var username: String = ""
     @State private var password: String = ""
+    @State private var isNavigating: Bool = false
     
     var body: some View {
-        ZStack {
-            
-            Color("BackgroundColor")
-                .edgesIgnoringSafeArea(.all)
-            
-            VStack(spacing: 20) {
+        NavigationView {
+            ZStack {
                 
-                PageTitleView(title: "Login")
-                
-                Text("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt")
-                    .font(.system(size: 13))
-                    .foregroundColor(Color("GreyBlueColor"))
-                    .multilineTextAlignment(.leading)
-                
-                Spacer()
+                Color("BackgroundColor")
+                    .edgesIgnoringSafeArea(.all)
                 
                 VStack(spacing: 20) {
                     
-                    LabelView(labelText: "Name")
+                    PageTitleView(title: "Login")
                     
-                    CustomTextField(text: $username, placeholder: "Username")
+                    Text("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt")
+                        .font(.system(size: 13))
+                        .foregroundColor(Color("GreyBlueColor"))
+                        .multilineTextAlignment(.leading)
                     
-                    LabelView(labelText: "Password")
+                    Spacer()
                     
-                    SecureField("Password", text: $password)
-                        .padding(.leading, 20)
-                        .background(
-                            Image("inputbox")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                        )
-                        .padding(.bottom, 20)
+                    VStack(spacing: 20) {
+                        
+                        LabelView(labelText: "Name")
+                        
+                        CustomTextField(text: $username, placeholder: "Username")
+                        
+                        LabelView(labelText: "Password")
+                        
+                        SecureField("Password", text: $password)
+                            .padding(.leading, 20)
+                            .background(
+                                Image("inputbox")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                            )
+                            .padding(.bottom, 20)
+                        
+                        HStack {
+                            Spacer()
+                            Text("Forgot password?")
+                                .font(.system(size: 12))
+                                .foregroundColor(Color("GreyBlueColor"))
+                        }
+                    }
+                    
+                    Spacer()
+                    
+                    Text("Or login with...")
+                        .font(.system(size: 12))
+                        .foregroundColor(Color("GreyBlueColor"))
                     
                     HStack {
-                        Spacer()
-                        Text("Forgot password?")
-                            .font(.system(size: 12))
-                        .foregroundColor(Color("GreyBlueColor"))
-                    }
-                }
-                
-                Spacer()
-                
-                Text("Or login with...")
-                    .font(.system(size: 12))
-                    .foregroundColor(Color("GreyBlueColor"))
-                
-                HStack {
-                    ImageButton(imageName: "googleButton") {
+                        ImageButton(imageName: "googleButton") {
+                        }
+                        
+                        ImageButton(imageName: "facebookButton") {
+                        }
                     }
                     
-                    ImageButton(imageName: "facebookButton") {
-                    }
+                    NavigationLink(
+                        destination: MainTabView()
+                            .navigationBarBackButtonHidden(true),
+                        isActive: $isNavigating,
+                        label: {
+                            ImageButton(imageName: "loginButton") {
+                                isNavigating = true
+                            }
+                        }
+                    )
                 }
-                
-                ImageButton(imageName: "loginButton") {
-                }
+                .padding(28)
             }
-            .padding(28)
         }
     }
 }
