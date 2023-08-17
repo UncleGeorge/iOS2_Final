@@ -11,6 +11,7 @@
 		8D0FB7C02A8B1D090097A0D7 /* MoneyTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0FB7BF2A8B1D090097A0D7 /* MoneyTrackerView.swift */; };
 		8D0FB7C22A8B22960097A0D7 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0FB7C12A8B22960097A0D7 /* Transaction.swift */; };
 		8D5F41942A8EB4BB0091DBAA /* DescriptionText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5F41932A8EB4BB0091DBAA /* DescriptionText.swift */; };
+		8D5F41A62A8EBF350091DBAA /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 8D5F41A52A8EBF350091DBAA /* FacebookLogin */; };
 		8D6407E12A8C09E00061F13B /* FloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6407E02A8C09E00061F13B /* FloatingActionButton.swift */; };
 		8D6407E32A8C0AEB0061F13B /* NewAmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6407E22A8C0AEB0061F13B /* NewAmountView.swift */; };
 		8D6407E52A8C19CE0061F13B /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6407E42A8C19CE0061F13B /* MainTabView.swift */; };
@@ -33,6 +34,8 @@
 		8D0FB7BF2A8B1D090097A0D7 /* MoneyTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyTrackerView.swift; sourceTree = "<group>"; };
 		8D0FB7C12A8B22960097A0D7 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		8D5F41932A8EB4BB0091DBAA /* DescriptionText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionText.swift; sourceTree = "<group>"; };
+		8D5F41A72A8EC1EA0091DBAA /* FINAL-ZhangzhiWang-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "FINAL-ZhangzhiWang-Info.plist"; sourceTree = SOURCE_ROOT; };
+		8D5F41A82A8EC5620091DBAA /* FINAL_ZhangzhiWang.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FINAL_ZhangzhiWang.entitlements; sourceTree = "<group>"; };
 		8D6407E02A8C09E00061F13B /* FloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButton.swift; sourceTree = "<group>"; };
 		8D6407E22A8C0AEB0061F13B /* NewAmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAmountView.swift; sourceTree = "<group>"; };
 		8D6407E42A8C19CE0061F13B /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -56,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D5F41A62A8EBF350091DBAA /* FacebookLogin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +99,8 @@
 		8DF96D4B2A884689008188FF /* FINAL_ZhangzhiWang */ = {
 			isa = PBXGroup;
 			children = (
+				8D5F41A82A8EC5620091DBAA /* FINAL_ZhangzhiWang.entitlements */,
+				8D5F41A72A8EC1EA0091DBAA /* FINAL-ZhangzhiWang-Info.plist */,
 				8D95E8D42A88862600FAFFF1 /* Components */,
 				8DF96D4C2A884689008188FF /* FINAL_ZhangzhiWangApp.swift */,
 				8DF96D5A2A8846D5008188FF /* LoginView.swift */,
@@ -136,6 +142,9 @@
 			dependencies = (
 			);
 			name = FINAL_ZhangzhiWang;
+			packageProductDependencies = (
+				8D5F41A52A8EBF350091DBAA /* FacebookLogin */,
+			);
 			productName = FINAL_ZhangzhiWang;
 			productReference = 8DF96D492A884689008188FF /* FINAL_ZhangzhiWang.app */;
 			productType = "com.apple.product-type.application";
@@ -164,6 +173,9 @@
 				Base,
 			);
 			mainGroup = 8DF96D402A884689008188FF;
+			packageReferences = (
+				8D5F41A42A8EBF350091DBAA /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+			);
 			productRefGroup = 8DF96D4A2A884689008188FF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -332,11 +344,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FINAL_ZhangzhiWang/FINAL_ZhangzhiWang.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FINAL_ZhangzhiWang/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "FINAL-ZhangzhiWang-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -360,11 +374,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FINAL_ZhangzhiWang/FINAL_ZhangzhiWang.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FINAL_ZhangzhiWang/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "FINAL-ZhangzhiWang-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -405,6 +421,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8D5F41A42A8EBF350091DBAA /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8D5F41A52A8EBF350091DBAA /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D5F41A42A8EBF350091DBAA /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8DF96D412A884689008188FF /* Project object */;
 }

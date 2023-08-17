@@ -30,7 +30,7 @@ struct NewReminderView: View {
                 VStack {
                     LabelView(labelText: "Category")
                     
-                    ImageButton(imageName: "categorySelector") {
+                    ImageButton(imageName: "categorySelector2") {
                     }
                 }
                 
@@ -38,21 +38,20 @@ struct NewReminderView: View {
                     LabelView(labelText: "Details")
                     
                     HStack {
-                        ImageButton(imageName: "googleButton") {
+                        ImageButton(imageName: "selectDate") {
                         }
                         
-                        ImageButton(imageName: "facebookButton") {
+                        ImageButton(imageName: "selectTime") {
                         }
                     }
                 }
-                
                 
                 VStack {
                     LabelView(labelText: "Note")
                     
                     TextEditor(text: $note)
                         .font(.body)
-                        .frame(height: 120)
+                        .frame(height: 60)
                         .shadow(color: .gray.opacity(0.3), radius: 1.5, x: 1, y: 1)
                 }
                 

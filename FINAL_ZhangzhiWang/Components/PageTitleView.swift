@@ -17,7 +17,6 @@ struct PageTitleView: View {
                 .font(.system(size: 22, weight: .bold))
             Spacer()
         }
-        .padding(.top, 50)
     }
 }
 

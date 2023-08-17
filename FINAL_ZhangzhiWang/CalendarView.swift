@@ -18,7 +18,7 @@ struct CalendarView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack(spacing: 20) {
-                PageTitleView(title: "Login")
+                PageTitleView(title: "Calendar")
                 
                 DescriptionText()
                 

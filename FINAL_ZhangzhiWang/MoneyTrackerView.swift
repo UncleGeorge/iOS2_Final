@@ -10,6 +10,7 @@ import SwiftUI
 struct MoneyTrackerView: View {
     
     @State private var selectedSegment = 0
+    @State private var showNewAmountView = false
     
     let transactions: [Transaction] = [
         Transaction(name: "John Doe", date: Date(), amount: 10),
@@ -73,8 +74,15 @@ struct MoneyTrackerView: View {
                 }
                 
             }
-            FloatingActionButton {
-            }
+            NavigationLink(
+                destination: NewAmountView(),
+                isActive: $showNewAmountView,
+                label: {
+                    FloatingActionButton {
+                        showNewAmountView = true
+                    }
+                }
+            )
         }
     }
 }

@@ -6,12 +6,26 @@
 //
 
 import SwiftUI
+import FacebookLogin
 
 struct LoginView: View {
     
     @State private var username: String = ""
     @State private var password: String = ""
     @State private var isNavigating: Bool = false
+    @State private var showAlert: Bool = false
+    
+    func facebookLogin() {
+        let loginManager = LoginManager()
+        loginManager.logIn(permissions: ["public_profile", "email"], from: nil) { (result, error) in
+            if let error = error {
+                print("Facebook login failed, error: \(error)")
+            } else if let result = result, !result.isCancelled {
+                print("Facebook login success")
+                isNavigating = true
+            }
+        }
+    }
     
     var body: some View {
         NavigationView {
@@ -64,6 +78,7 @@ struct LoginView: View {
                         }
                         
                         ImageButton(imageName: "facebookButton") {
+                            facebookLogin()
                         }
                     }
                     
@@ -73,8 +88,16 @@ struct LoginView: View {
                         isActive: $isNavigating,
                         label: {
                             ImageButton(imageName: "loginButton") {
+//                                showAlert = true
                                 isNavigating = true
                             }
+//                            .alert(isPresented: $showAlert) {
+//                                Alert(
+//                                    title: Text("Reminder"),
+//                                    message: Text("Please click the Facebook Login button to proceed."),
+//                                    dismissButton: .default(Text("OK"))
+//                                )
+//                            }
                         }
                     )
                 }

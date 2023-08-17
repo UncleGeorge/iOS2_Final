@@ -14,81 +14,90 @@ struct ToDosView: View {
                  "Find people for the user test",
                  "Buy cookies for the kids",
                  "Pay electricity bill"]
+    @State private var showNewReminderView = false
     
     var body: some View {
-        ZStack {
-            
-            Color("BackgroundColor")
-                .edgesIgnoringSafeArea(.all)
-            
-            VStack {
-                VStack(spacing: 20) {
-                    
-                    PageTitleView(title: "ToDos")
-                    
-                    DescriptionText()
-                    
-                    HStack {
-                        Image("computerIcon")
-                        Spacer()
-                        Image("familyIcon")
-                        Spacer()
-                        Image("clockIcon")
+        NavigationView {
+            ZStack {
+                
+                Color("BackgroundColor")
+                    .edgesIgnoringSafeArea(.all)
+                
+                VStack {
+                    VStack(spacing: 20) {
+                        
+                        PageTitleView(title: "ToDos")
+                        
+                        DescriptionText()
+                        
+                        HStack {
+                            Image("computerIcon")
+                            Spacer()
+                            Image("familyIcon")
+                            Spacer()
+                            Image("clockIcon")
+                            
+                        }
+                        .padding(12)
                         
                     }
-                    .padding(12)
+                    .padding(28)
                     
-                }
-                .padding(28)
-                
-                ZStack {
-                    VStack {
-                        HStack{
-                            Spacer()
-                            Image("yellowRect")
-                            Image("blueRect")
-                        }
-                        Spacer()
-                    }
-                    .padding(.top, 10)
-                    
-                    VStack {
-                        HStack {
-                            Text("Today")
-                                .font(.system(size: 22, weight: .bold))
+                    ZStack {
+                        VStack {
+                            HStack{
+                                Spacer()
+                                Image("yellowRect")
+                                Image("blueRect")
+                            }
                             Spacer()
                         }
-                        .padding(.top, 40)
-                        .padding(.leading, 28)
+                        .padding(.top, 10)
                         
                         VStack {
-                            ForEach(todos, id: \.self) { todo in
-                                HStack {
-                                    Image("redRing")
-                                        .resizable()
-                                        .frame(width: 20, height: 20)
-                                        .padding(.leading, 28)
-                                    
-                                    Text(todo)
-                                        .font(.system(size: 13))
-                                        .foregroundColor(Color("DarkBlueColor"))
-                                    
-                                    Spacer()
-                                }
-                                .padding(20)
-                                .background(
-                                    Image("todoListRect")
-                                        .resizable()
-                                        .frame(width: UIScreen.main.bounds.width - 45)
-                                )
+                            HStack {
+                                Text("Today")
+                                    .font(.system(size: 22, weight: .bold))
+                                Spacer()
                             }
+                            .padding(.top, 40)
+                            .padding(.leading, 28)
+                            
+                            VStack {
+                                ForEach(todos, id: \.self) { todo in
+                                    HStack {
+                                        Image("redRing")
+                                            .resizable()
+                                            .frame(width: 20, height: 20)
+                                            .padding(.leading, 28)
+                                        
+                                        Text(todo)
+                                            .font(.system(size: 13))
+                                            .foregroundColor(Color("DarkBlueColor"))
+                                        
+                                        Spacer()
+                                    }
+                                    .padding(20)
+                                    .background(
+                                        Image("todoListRect")
+                                            .resizable()
+                                            .frame(width: UIScreen.main.bounds.width - 45)
+                                    )
+                                }
+                            }
+                            Spacer()
                         }
-                        Spacer()
                     }
                 }
-            }
-            
-            FloatingActionButton {
+                NavigationLink(
+                    destination: NewReminderView(),
+                    isActive: $showNewReminderView,
+                    label: {
+                        FloatingActionButton {
+                            showNewReminderView = true
+                        }
+                    }
+                )
             }
         }
     }
