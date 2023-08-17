@@ -26,10 +26,7 @@ struct ToDosView: View {
                     
                     PageTitleView(title: "ToDos")
                     
-                    Text("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt")
-                        .font(.system(size: 13))
-                        .foregroundColor(Color("GreyBlueColor"))
-                        .multilineTextAlignment(.leading)
+                    DescriptionText()
                     
                     HStack {
                         Image("computerIcon")

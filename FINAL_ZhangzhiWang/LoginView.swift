@@ -24,10 +24,7 @@ struct LoginView: View {
                     
                     PageTitleView(title: "Login")
                     
-                    Text("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt")
-                        .font(.system(size: 13))
-                        .foregroundColor(Color("GreyBlueColor"))
-                        .multilineTextAlignment(.leading)
+                    DescriptionText()
                     
                     Spacer()
                     
