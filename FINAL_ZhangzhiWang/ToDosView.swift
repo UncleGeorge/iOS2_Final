@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ToDosView: View {
     
-    let todos = ["Daily Meeting with the team",
-                 "Completing the prototype",
-                 "Find people for the user test",
-                 "Buy cookies for the kids",
-                 "Pay electricity bill"]
+    @State private var todos = ["Daily Meeting with the team",
+                                "Completing the prototype",
+                                "Find people for the user test",
+                                "Buy cookies for the kids",
+                                "Pay electricity bill"]
     @State private var showNewReminderView = false
     
     var body: some View {
@@ -63,26 +63,28 @@ struct ToDosView: View {
                             .padding(.top, 40)
                             .padding(.leading, 28)
                             
-                            VStack {
-                                ForEach(todos, id: \.self) { todo in
-                                    HStack {
-                                        Image("redRing")
-                                            .resizable()
-                                            .frame(width: 20, height: 20)
-                                            .padding(.leading, 28)
-                                        
-                                        Text(todo)
-                                            .font(.system(size: 13))
-                                            .foregroundColor(Color("DarkBlueColor"))
-                                        
-                                        Spacer()
+                            ScrollView {
+                                VStack {
+                                    ForEach(todos, id: \.self) { todo in
+                                        HStack {
+                                            Image("redRing")
+                                                .resizable()
+                                                .frame(width: 20, height: 20)
+                                                .padding(.leading, 28)
+                                            
+                                            Text(todo)
+                                                .font(.system(size: 13))
+                                                .foregroundColor(Color("DarkBlueColor"))
+                                            
+                                            Spacer()
+                                        }
+                                        .padding(20)
+                                        .background(
+                                            Image("todoListRect")
+                                                .resizable()
+                                                .frame(width: UIScreen.main.bounds.width - 45)
+                                        )
                                     }
-                                    .padding(20)
-                                    .background(
-                                        Image("todoListRect")
-                                            .resizable()
-                                            .frame(width: UIScreen.main.bounds.width - 45)
-                                    )
                                 }
                             }
                             Spacer()
@@ -90,7 +92,7 @@ struct ToDosView: View {
                     }
                 }
                 NavigationLink(
-                    destination: NewReminderView(),
+                    destination: NewReminderView(todos: $todos),
                     isActive: $showNewReminderView,
                     label: {
                         FloatingActionButton {

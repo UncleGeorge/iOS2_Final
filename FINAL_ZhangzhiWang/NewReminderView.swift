@@ -11,6 +11,9 @@ struct NewReminderView: View {
     
     @State private var newReminder: String = ""
     @State private var note: String = ""
+    @Binding var todos: [String]
+    @State private var showAlert = false
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         ZStack {
@@ -30,7 +33,7 @@ struct NewReminderView: View {
                 VStack {
                     LabelView(labelText: "Category")
                     
-                    ImageButton(imageName: "categorySelector2") {
+                    ImageButton(imageName: "categorySelector") {
                     }
                 }
                 
@@ -78,6 +81,16 @@ struct NewReminderView: View {
                 }
                 
                 ImageButton(imageName: "createReminderButton") {
+                    if newReminder.isEmpty {
+                        showAlert = true
+                    } else {
+                        todos.append(newReminder)
+                        newReminder = ""
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                }
+                .alert(isPresented: $showAlert) {
+                    Alert(title: Text("Warning"), message: Text("Please enter a reminder name"), dismissButton: .default(Text("OK")))
                 }
             }
             .padding(28)
@@ -87,6 +100,6 @@ struct NewReminderView: View {
 
 struct NewReminderView_Previews: PreviewProvider {
     static var previews: some View {
-        NewReminderView()
+        NewReminderView(todos: .constant(["Sample ToDo"]))
     }
 }
