@@ -11,6 +11,10 @@ struct NewAmountView: View {
     
     @State private var newAmountName: String = ""
     @State private var newAmount: Double = 0
+    @Binding var transactions: [Transaction]
+    @State private var showingAlert = false
+    @State private var alertMessage = ""
+    @Environment(\.presentationMode) var presentationMode
     
     private let currencyFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -85,6 +89,19 @@ struct NewAmountView: View {
                 Spacer()
                 
                 ImageButton(imageName: "enterNewAmountButton") {
+                    if newAmountName.isEmpty {
+                        alertMessage = "Please input the amount name."
+                        showingAlert = true
+                    } else if newAmount == 0 {
+                        alertMessage = "Please input a valid amount."
+                        showingAlert = true
+                    } else {
+                        transactions.append(Transaction(name: newAmountName, date: Date(), amount: -newAmount))
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                }
+                .alert(isPresented: $showingAlert) {
+                    Alert(title: Text("Error"), message: Text(alertMessage), dismissButton: .default(Text("Okay")))
                 }
             }
             .padding(28)
@@ -93,7 +110,11 @@ struct NewAmountView: View {
 }
 
 struct NewAmountView_Previews: PreviewProvider {
+    @State static var previewTransactions: [Transaction] = [
+        Transaction(name: "Sample", date: Date(), amount: 20.0)
+    ]
+    
     static var previews: some View {
-        NewAmountView()
+        NewAmountView(transactions: $previewTransactions)
     }
 }
